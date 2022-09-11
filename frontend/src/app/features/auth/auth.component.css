@@ -1,0 +1,32 @@
+.modal-content .header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.modal-content .header .i-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #71767b;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+.modal-content .header .i-wrapper:hover {
+  color: var(--font-color-4);
+  cursor: pointer;
+}
+
+.modal-content .header .i-wrapper i {
+  font-size: 28px;
+  padding: 5px;
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    border-radius: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+}

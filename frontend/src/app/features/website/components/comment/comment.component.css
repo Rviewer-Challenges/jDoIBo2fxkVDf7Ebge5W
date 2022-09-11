@@ -1,0 +1,41 @@
+.comment {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: 1px solid #666666;
+}
+
+.comment .user {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.comment .user img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.comment .user .username {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--font-color-1);
+}
+
+.comment .stamps {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--font-color-5);
+}
+
+.comment p {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--font-color-1);
+}

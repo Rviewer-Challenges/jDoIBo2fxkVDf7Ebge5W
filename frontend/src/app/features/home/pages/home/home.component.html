@@ -1,0 +1,30 @@
+<div class="main-wrapper">
+  <div class="resources">
+    <section [id]="category.name" class="resource" *ngFor="let category of categories">
+      <div class="title-wrapper">
+        <span class="title-section">{{ category.name }}</span>
+        <a [routerLink]="['/category', category._id]" class="more">
+          See all
+          <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="cards">
+        <div class="card" *ngFor="let resource of category.resources">
+          <picture>
+            <img [src]="resource.image" alt="prev-image" loading="lazy">
+          </picture>
+          <div class="card-content">
+            <a [routerLink]="['/resource', resource._id]" class="card-title">{{resource.name}}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="navigation">
+    <div class="top">
+      <app-card-navigation [titles]="titles"></app-card-navigation>
+      <app-card-tips [websites]="websites" *ngIf="websites"></app-card-tips>
+    </div>
+  </div>
+</div>

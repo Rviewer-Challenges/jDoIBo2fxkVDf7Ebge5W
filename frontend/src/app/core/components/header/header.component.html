@@ -1,0 +1,46 @@
+<header>
+  <div class="header-wrapper">
+    <div class="logo" routerLink="/">
+      <span class="title-1">Resour</span>
+      <span class="title-2">center</span>
+    </div>
+    <div class="options">
+      <app-toggle-theme></app-toggle-theme>
+      <div class="menu" *ngIf="!isAuthenticated">
+        <a (click)="showModal('login')" class="btn btn-primary">Sign in</a>
+        <a (click)="showModal('register')" class="btn btn-primary btn-outline">Sign up</a>
+      </div>
+      <div class="dropdown hover" *ngIf="isAuthenticated">
+        <div class="user">
+          <img [src]="getImage" *ngIf="getImage" alt="user-image">
+          <span class="username">{{getName}}</span>
+        </div>
+        <ul>
+          <li><a routerLink="/website/saved"><i class="far fa-bookmark"></i> websites saved</a></li>
+          <li><a (click)="logOut()"><i class="fa fa-right-from-bracket"></i> log out</a></li>
+        </ul>
+      </div>
+      <img [src]="getImage" (click)="showSidenav()" class="mobile" alt="user-image" *ngIf="isAuthenticated">
+      <a class="icon" (click)="showSidenav()" *ngIf="!isAuthenticated">
+        <i class="fa fa-bars"></i>
+      </a>
+      <div class="menu-sidenav" #menuSidenav>
+        <div class="items">
+          <a class="icon" (click)="showSidenav()">
+            <i class="fa fa-xmark"></i>
+          </a>
+          <div class="auth-options" *ngIf="!isAuthenticated">
+            <a (click)="showModal('login')" class="btn btn-primary">Sign in</a>
+            <a (click)="showModal('register')" class="btn btn-primary btn-outline">Sign up</a>
+          </div>
+          <div class="auth-more" *ngIf="isAuthenticated">
+            <img [src]="getImage" alt="image-user">
+            <span class="username">{{ getName }}</span>
+            <a routerLink="/website/saved" class="btn btn-primary btn-outline">websites saved </a>
+            <a (click)="logOut()" class="btn btn-primary">log out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

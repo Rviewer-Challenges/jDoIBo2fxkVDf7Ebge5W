@@ -1,0 +1,14 @@
+<div class="modal dialog" #modalAuth>
+  <div class="modal-content">
+    <div class="header">
+      <div class="i-wrapper"><i class="fa-regular fa-circle-xmark" (click)="closeModal()"></i></div>
+    </div>
+    <div class="body">
+      <app-more-features *ngIf="showMore && !showLogin" (changeView)="changePage($event)"></app-more-features>
+      <app-login *ngIf="!showMore && showLogin" (showRegister)="changePage($event)" (closeModal)="closeModal()">
+      </app-login>
+      <app-register *ngIf="!showMore && !showLogin" (showLogin)="changePage($event)" (closeModal)="closeModal()">
+      </app-register>
+    </div>
+  </div>
+</div>

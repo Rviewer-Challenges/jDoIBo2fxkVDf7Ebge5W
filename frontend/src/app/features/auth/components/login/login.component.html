@@ -1,0 +1,23 @@
+<div class="login-container">
+  <form [formGroup]="loginForm" (submit)="login()">
+    <span class="sign-in">Sign in</span>
+    <label for="email" class="floating">
+      <input formControlName="email" type="text" id="email" placeholder="email">
+      <span>Email</span>
+    </label>
+    <label for="password" class="floating">
+      <input formControlName="password" type="password" id="password" placeholder="password">
+      <span>Password</span>
+    </label>
+    <span class="error">{{message}}</span>
+    <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
+  </form>
+  <div _ngcontent-vhs-c8="" class="divisor">
+    <div _ngcontent-vhs-c8="" class="line"></div><span _ngcontent-vhs-c8="">o</span>
+    <div _ngcontent-vhs-c8="" class="line"></div>
+  </div>
+  <div class="no-account">
+    <span>Have no account?</span>
+    <a (click)="changePage()" class="link">Sign on</a>
+  </div>
+</div>

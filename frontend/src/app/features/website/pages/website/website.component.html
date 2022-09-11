@@ -1,0 +1,30 @@
+<div class="website">
+  <div class="card-website" *ngIf="!isLoading && website">
+    <picture>
+      <img *ngIf="website.image" [src]="website.image" alt="image-top">
+    </picture>
+    <div class="card-body">
+      <span class="title">{{website.name}}</span>
+      <a [href]="website.link" target="_blank" class="original">view original</a>
+      <div class="details">
+        <ngx-star-rating [id]="website.name" [(ngModel)]="website.stars" [disabled]="true"></ngx-star-rating>
+        <div class="options">
+          <span class="resource">{{website.resource.name}}</span> &bull;
+          <span class="category">{{website.resource.category.name}}</span>
+        </div>
+      </div>
+      <p class="content" *ngIf="website.description && website.description.length > 0">
+        {{ website.description }}
+      </p>
+    </div>
+  </div>
+
+  <section class="comments-section">
+    <app-comment-form *ngIf="website && !commentBefore" [website]="website._id!" (newComment)="createComment($event)">
+    </app-comment-form>
+    <span *ngIf="comments && comments.length > 0">Comments section</span>
+    <div *ngIf="comments && comments.length > 0" class="comments">
+      <app-comment *ngFor="let comment of comments" [comment]="comment"></app-comment>
+    </div>
+  </section>
+</div>

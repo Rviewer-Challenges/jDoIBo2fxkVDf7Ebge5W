@@ -1,0 +1,11 @@
+<button class="btn-ellipsis" #btnDrop (click)="clickButton()">
+  <i class="fa fa-ellipsis-vertical"></i>
+</button>
+<ul class='dropdown-list' role="menu" #dropdown>
+  <li (click)="modifySavedWebsites()" role="menuitem" class='dropdown-item'>
+    <i class="fa fa-bookmark"></i>
+    <span class="dropdown-item-text">
+      {{ inUser ? 'remove save' : 'save website'}}
+    </span>
+  </li>
+</ul>

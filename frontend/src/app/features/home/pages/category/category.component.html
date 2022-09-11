@@ -1,0 +1,25 @@
+<div class="main-wrapper">
+  <div class="categories" *ngIf="category">
+    <div class="title-wrapper">
+      <span class="title-section">{{ category.name }}</span>
+      <span>Input search</span>
+    </div>
+    <section class="cards">
+      <div class="card" *ngFor="let resource of resources">
+        <picture>
+          <img [src]="resource.image" alt="prev-image">
+        </picture>
+        <div class="card-content">
+          <a [routerLink]="['/resource', resource._id]" class="card-title">{{resource.name}}</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="navigation">
+    <div class="top">
+      <app-card-tips [websites]="websites"></app-card-tips>
+    </div>
+  </div>
+
+</div>

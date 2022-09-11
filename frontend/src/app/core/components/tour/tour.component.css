@@ -1,0 +1,108 @@
+.progress-wrap {
+  z-index: 201;
+  max-width: 80%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.progress-wrap::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+  background-color: #e6e6e6;
+}
+
+.progress {
+  width: 0;
+  height: 4px;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+  background-color: var(--font-color-4);
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  background-color: #fff;
+  border: 3px solid #e6e6e6;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+
+.step.active {
+  border-color: var(--font-color-4);
+}
+
+.btn:disabled {
+  color: #666;
+  background-color: #e6e6e6;
+  cursor: not-allowed;
+}
+
+.body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.slider .pages {
+  display: flex;
+}
+
+.slider .pages .page {
+  min-width: 20%;
+  width: 20%;
+  transition: margin-left 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.page img {
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
+.page .description {
+  font-size: 23px;
+  font-weight: 500;
+  color: var(--font-color-1);
+  padding: 0 1rem;
+}

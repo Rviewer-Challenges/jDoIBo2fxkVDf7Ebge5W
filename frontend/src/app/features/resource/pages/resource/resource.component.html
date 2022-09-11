@@ -1,0 +1,36 @@
+<div class="resource" *ngIf="resource && websites">
+  <div class="top">
+    <div class="title-wrapper">
+      <span class="title">{{resource.name}}</span>
+      <a [href]="resource.link" target="__blank">view oficial site</a>
+      <p class="description">{{ resource.description }}</p>
+    </div>
+    <picture>
+      <img [src]="resource.image" alt="resource-image">
+    </picture>
+  </div>
+  <div class="main-wrapper">
+    <div class="input-mobile">
+      <app-search-input class="input" (search)="searchWebsites($event)"></app-search-input>
+    </div>
+    <div class="cards">
+      <div class="card-resource" *ngFor="let website of websites">
+        <picture>
+          <img [src]="website.image" loading="lazy" alt="prev-image">
+        </picture>
+        <app-dropdown [inUser]="website.inUser!" (modify)="modifySavedWebsites(website._id!)">
+        </app-dropdown>
+        <div class="card-content">
+          <a [routerLink]="['/website', website._id]" class="card-title">{{website.name}}</a>
+          <ngx-star-rating [id]="website.name" [(ngModel)]="website.stars" [disabled]="true"></ngx-star-rating>
+        </div>
+      </div>
+    </div>
+    <div class="navigation">
+      <div class="options">
+        <app-search-input (search)="searchWebsites($event)"></app-search-input>
+        <app-card-resources [resources]="resources" *ngIf="resources"></app-card-resources>
+      </div>
+    </div>
+  </div>
+</div>
