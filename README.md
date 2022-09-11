@@ -3,7 +3,7 @@
   <p align="center">
     A place where you will easily find resources that will help you improve your projects
     <br />
-    <a href="https://resourcenter.netlify.app/">View Demo</a>
+    <a href="https://resourcenter.netlify.app/" target="_blank">View Demo</a>
   </p>
 </div>
 
