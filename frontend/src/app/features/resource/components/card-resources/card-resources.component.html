@@ -1,0 +1,9 @@
+<div class="card-resources">
+  <div class="resource" [routerLink]="['/resource', resource._id]" *ngFor="let resource of resources">
+    <div class="resource-content">
+      <span class="title">{{resource.name | slice:0:32}}{{(resource.name.length > 20)?'...':'' }}</span>
+      <span class="category">{{resource.category.name}}</span>
+    </div>
+  </div>
+
+</div>

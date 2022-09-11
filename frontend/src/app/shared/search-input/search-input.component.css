@@ -1,0 +1,29 @@
+.input-group {
+  position: relative;
+}
+
+input.icon {
+  background: var(--bg-hover-1);
+  border: 1px solid#b8c1ce77;
+  border-radius: 30px;
+  height: 45px;
+  width: 100%;
+  min-width: 0;
+  padding: 10px 20px 10px 50px;
+  color: var(--font-color-1);
+  font-size: 16px;
+  transition: 0.2s;
+  box-shadow: var(--box-shadow);
+}
+
+input.icon ~ i {
+  top: 15px;
+  left: 20px;
+  position: absolute;
+  color: #71767b;
+  transition: 0.2s;
+}
+
+input.icon:focus ~ i {
+  color: var(--font-color-4);
+}

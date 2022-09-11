@@ -1,0 +1,33 @@
+.card-navigation {
+  border: 1px solid #b8c1ec77;
+  border-radius: 1rem;
+  background: var(--bg-color-2);
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+}
+
+.items .item {
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  transition: 0.4s ease;
+  color: var(--font-color-4);
+  font-weight: 500;
+}
+
+.items .item:first-child {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.items .item:last-child {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.items .item:hover {
+  background: var(--bg-hover-1);
+}

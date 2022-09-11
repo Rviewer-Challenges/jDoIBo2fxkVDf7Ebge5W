@@ -1,0 +1,18 @@
+<div class="main-wrapper">
+  <div class="saved">
+    <span class="title">Websites Saved</span>
+    <div class="cards">
+      <div class="card-resource" *ngFor="let website of websites">
+        <picture>
+          <img [src]="website.image" loading="lazy" alt="prev-image">
+        </picture>
+        <app-dropdown [inUser]="website.inUser ? website.inUser : false" (modify)="modifySavedWebsites(website._id!)">
+        </app-dropdown>
+        <div class="card-content">
+          <a [routerLink]="['/website', website._id]" class="card-title">{{website.name}}</a>
+          <ngx-star-rating [id]="website.name" [(ngModel)]="website.stars" [disabled]="true"></ngx-star-rating>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

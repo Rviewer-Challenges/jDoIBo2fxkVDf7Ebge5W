@@ -1,0 +1,265 @@
+header {
+  transition: all 0.5s;
+  z-index: 20;
+  padding: 0.8rem 0;
+  position: sticky;
+  top: 0;
+  height: 4.5rem;
+  width: 100%;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 10%);
+  background: var(--bg-color-3);
+}
+
+header .header-wrapper {
+  height: 100%;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .header-wrapper .logo {
+  display: flex;
+  align-items: center;
+  font-size: 48px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+header .header-wrapper .logo .title-1 {
+  color: var(--font-color-4);
+}
+
+header .header-wrapper .logo .title-2 {
+  color: var(--font-color-1);
+}
+
+header .header-wrapper .options {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 7px;
+}
+
+header .header-wrapper .options .menu {
+  gap: 7px;
+  display: flex;
+  align-items: center;
+}
+
+header .header-wrapper .options .icon {
+  font-size: 28px;
+  display: none;
+  color: var(--font-color-4);
+}
+
+header .header-wrapper .options .bars {
+  display: none;
+  opacity: 0;
+}
+
+.dropdown {
+  width: 200px;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  border-radius: 12px;
+}
+
+.dropdown .user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.options img.mobile {
+  display: none;
+  opacity: 0;
+}
+
+.options img,
+.dropdown .user img {
+  width: 40px;
+  max-width: 40px;
+  height: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dropdown .user span.username {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1 1 100%;
+  width: 0;
+  color: var(--font-color-1);
+}
+
+.dropdown ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0 0 0;
+  position: absolute;
+  width: 100%;
+  box-shadow: var(--box-shadow-drop);
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.dropdown ul li {
+  height: 0;
+  overflow: hidden;
+  transition: 0.15s;
+  background: var(--bg-color-3);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #999;
+}
+
+.dropdown ul li a:visited {
+  color: #999;
+}
+
+.dropdown.hover ul li {
+  transition-delay: 0.2s;
+}
+
+.dropdown ul li a {
+  color: #999;
+  display: block;
+  padding: 0 0 0 10px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.dtop .dropdown ul li:first-child a {
+  border-radius: 2px 2px 0 0;
+}
+
+.dropdown ul li:last-child a {
+  border-radius: 0 0 2px 2px;
+}
+
+.dropdown ul a:hover,
+.dropdown.toggle ul > label:hover,
+.dropdown.toggle ul > input:checked ~ label {
+  color: var(--font-color-4) !important;
+  cursor: pointer;
+}
+.dropdown ul > a:hover::after,
+.dropdown.toggle ul > label:hover::after,
+.dropdown.toggle ul > input:checked ~ label::after {
+  cursor: pointer;
+}
+.dropdown ul li:first-child a:hover::before {
+  cursor: pointer;
+}
+.dropdown.hover:hover ul li,
+.dropdown.toggle > input:checked ~ ul li {
+  cursor: pointer;
+  height: 40px;
+}
+
+.menu-sidenav {
+  display: none;
+  height: 100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  box-shadow: -6px 2px 6px rgb(0 0 0 / 10%);
+  background: var(--bg-color-2);
+  overflow-x: hidden;
+  transition: 0.3s ease-in;
+  padding: 0.8rem 1rem;
+}
+
+.menu-sidenav.open {
+  min-width: 60%;
+  display: block;
+}
+
+.menu-sidenav .items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.menu-sidenav .items .icon {
+  align-self: flex-end;
+}
+
+.items .auth-more a.btn,
+.menu-sidenav .items .auth-options a.btn {
+  width: 100%;
+}
+
+.items .auth-options,
+.items .auth-more {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.items .auth-more img {
+  width: 55px;
+  max-width: 55px;
+  height: 55px;
+  max-height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.items .auth-more span.username {
+  color: var(--font-color-1);
+}
+
+@media (max-width: 768px) {
+  header .header-wrapper .logo {
+    font-size: 38px;
+  }
+
+  header .header-wrapper .options .menu {
+    display: none;
+  }
+
+  header .header-wrapper .options .icon {
+    opacity: 1;
+    display: block;
+  }
+
+  .options .dropdown {
+    opacity: 0;
+    display: none;
+  }
+
+  .options img.mobile {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-sidenav.open {
+    display: none;
+    width: 0%;
+  }
+}
+
+@media (max-width: 480px) {
+  header .header-wrapper .logo {
+    font-size: 32px;
+  }
+}

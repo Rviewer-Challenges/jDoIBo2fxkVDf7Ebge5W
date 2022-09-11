@@ -1,0 +1,12 @@
+<div class="comment">
+  <div class="user">
+    <img [src]="comment.user.image" alt="user-image">
+    <span class="username">{{getName}}</span>
+  </div>
+  <div class="stamps">
+    <ngx-star-rating [id]="getName.concat(comment.created.toString())" [disabled]="true" [(ngModel)]="comment.stars">
+    </ngx-star-rating>
+    <span class="date">{{comment.created | date: 'dd/MM/YYYY'}}</span>
+  </div>
+  <p> {{ comment.content }} </p>
+</div>

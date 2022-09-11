@@ -1,0 +1,15 @@
+<div class="comment">
+  <div class="comment-title">
+    <span class="title">Califica este recurso</span>
+    <span class="subtitle">Comparte tu opinión con otros usuarios</span>
+  </div>
+  <div class="content">
+    <ngx-star-rating [(ngModel)]="stars" (ngModelChange)="changeStars($event)" [id]="'comment-section'"
+      [disabled]="false"></ngx-star-rating>
+    <textarea [(ngModel)]="content" (input)="auto_height(txtTwit)" #txtTwit rows="1"
+      placeholder="¿Qué está pasando?"></textarea>
+  </div>
+  <div class="options">
+    <button (click)="publish()" class="btn btn-primary btn-lg">Publish</button>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="register-container">
+  <form [formGroup]="registerForm" (submit)="register()">
+    <span class="sign-on">Sign on</span>
+    <div class="input-group">
+      <label for="email" class="floating">
+        <input formControlName="email" type="text" id="email" placeholder="email">
+        <span>Email</span>
+      </label>
+      <div *ngIf="validateForm('email')" class="text-error">
+        <span *ngIf="validateField('email', 'required')" class="error">must provide an email</span>
+        <span *ngIf="validateField('email', 'pattern')" class="error">email format wrong</span>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="password" class="floating">
+        <input formControlName="password" type="password" id="password" placeholder="password">
+        <span>Password</span>
+      </label>
+      <div *ngIf="validateForm('password')" class="text-error">
+        <span *ngIf="validateField('password', 'required')" class="error">must provide a password</span>
+        <span *ngIf="validateField('password', 'pattern')" class="error">must contain:
+          <ul>
+            <li>1 lower case</li>
+            <li>1 upper case</li>
+            <li>1 numeric character</li>
+            <li>1 special character</li>
+          </ul>
+        </span>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="confirm-password" class="floating">
+        <input formControlName="password2" type="password" id="confirm-password" placeholder="confirmar password">
+        <span>Confirm Password</span>
+      </label>
+      <div *ngIf="validateForm('password2')" class="text-error">
+        <span *ngIf="validateField('password2', 'required')" class="error">must provide a password</span>
+        <span *ngIf="validateField('password2', 'matching')" class="error">password has to match</span>
+      </div>
+    </div>
+    <span class="error">{{message}}</span>
+    <button [disabled]="!registerForm.valid" type="submit" class="btn btn-primary btn-lg">Create account</button>
+  </form>
+  <div _ngcontent-vhs-c8="" class="divisor">
+    <div _ngcontent-vhs-c8="" class="line"></div><span _ngcontent-vhs-c8="">o</span>
+    <div _ngcontent-vhs-c8="" class="line"></div>
+  </div>
+  <div class="has-account">
+    <span>Already have account?</span>
+    <a (click)="changePage()" class="link">Sign in</a>
+  </div>
+</div>

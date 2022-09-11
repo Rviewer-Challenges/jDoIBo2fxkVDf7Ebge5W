@@ -1,0 +1,46 @@
+.card-resources {
+  margin-top: 1rem;
+  border: 1px solid #b8c1ce77;
+  border-radius: 1rem;
+}
+
+.resource {
+  min-height: 4.2rem;
+  display: flex;
+  padding: 0.5rem 0.8rem;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.resource:first-child {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.resource:last-child {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.resource:hover {
+  background: var(--bg-hover-1);
+}
+
+.resource .resource-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.resource .resource-content .title {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--font-color-1);
+}
+
+.resource .resource-content .category {
+  font-size: 12px;
+  color: var(--font-color-4);
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+}

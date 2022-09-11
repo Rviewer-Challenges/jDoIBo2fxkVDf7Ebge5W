@@ -1,0 +1,11 @@
+<div class="card-tips">
+  <div class="tip" *ngFor="let website of websites" [routerLink]="['/website', website._id]">
+    <div class="tip-content">
+      <span class="title">{{website.name | slice:0:32}}{{(website.name.length > 20)?'...':'' }}</span>
+      <span class="resource">{{website.resource.name}}</span>
+    </div>
+    <figure *ngIf="website.image">
+      <img alt="tip-image" [src]="website.image">
+    </figure>
+  </div>
+</div>
